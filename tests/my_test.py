@@ -34,7 +34,7 @@ class TestCartAddProduct(unittest.TestCase):
         # Essayer d'ajouter une quantité supérieure au stock disponible
         with self.assertRaises(ValueError) as context:
             self.cart.add_product(self.product1, 6)  # Stock = 5
-        self.assertEqual(str(context.exception), "Cannot add 6 of Laptop. Only 5 left.")
+        self.assertEqual(str(context.exception), "Cannot add 6 of Laptop. Only 5 left")
 
     def test_add_product_update_quantity(self):
         # Ajouter un produit plusieurs fois (quantité mise à jour)
