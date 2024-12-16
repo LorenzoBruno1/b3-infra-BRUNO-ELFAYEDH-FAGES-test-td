@@ -48,3 +48,18 @@ class Cart:
             max_delivery_time = max(max_delivery_time, category_delivery_times.get(category, 7))
 
         return f"Estimated delivery time: {max_delivery_time} days."
+    
+    def delivery_estimate(self):
+        """Calculate the estimated delivery time based on the products in the cart."""
+        category_delivery_times = {
+            "Électronique": 5,
+            "Bureau": 2,
+            "Mode": 3
+        }
+        max_delivery_time = 0
+
+        for product in self.items.keys():
+            category = product.category
+            max_delivery_time = max(max_delivery_time, category_delivery_times.get(category, 7))
+
+        return f"Estimated delivery time: {max_delivery_time} days."
