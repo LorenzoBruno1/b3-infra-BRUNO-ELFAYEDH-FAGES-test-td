@@ -1,0 +1,90 @@
+﻿User Stories
+
+
+1. Ajouter un produit au panier
+* En tant que : client
+* Je veux : ajouter un produit au panier avec une quantité choisie
+* Afin de : préparer ma commande avant de l'acheter
+
+
+Critères d'acceptation :
+   1. Je peux ajouter un produit avec une quantité spécifique au panier.
+   2. Si le produit est déjà dans le panier, la quantité est mise à jour.
+   3. Si la quantité demandée dépasse le stock disponible, un message d'erreur s'affiche : "Quantité insuffisante en stock" .
+
+
+2. Supprimer un produit du panier
+* En tant que : client
+* Je veux : supprimer un produit de mon panier
+* Afin de : ne pas commander un article que je ne souhaite plus acheter
+
+
+Critères d'acceptation :
+   1. Je peux supprimer un produit spécifique présent dans le panier.
+   2. Si le produit n'est pas dans le panier, un message d'erreur s'affiche : "Produit non trouvé dans le panier" .
+3. Consulter le contenu de mon panier
+* En tant que : client
+* Je veux : voir les produits ajoutés à mon panier
+* Afin de : vérifier ma sélection avant de finaliser ma commande
+Critères d'acceptation :
+   1. Le panier affiche chaque produit avec son nom, sa quantité et son coût total.
+
+
+
+
+4. Calculer le montant total du panier
+* En tant que : utilisateur
+* Je veux : calculer le montant total de mon panier
+* Afin de : connaître le coût total des produits sélectionnés
+Critères d'acceptation :
+1. Le montant total est calculé en additionnant le prix de chaque produit multiplié par sa quantité dans le panier.
+2. Le montant total est retourné sous forme numérique.
+5. Vérification du stock
+* En tant que : utilisateur.
+* je veux : être averti si j'ajoute une quantité supérieure au stock disponible,
+* Afin d'éviter les erreurs.
+Critères d'acceptation :
+1. Message d'erreur explicite
+   * Exemple : "Stock insuffisant pour [Nom du produit]. Disponible : [X] unités."
+2. Blocage de l'action
+   * Impossible d’ajouter une quantité supérieure au stock.
+3. Mise à jour en temps réel
+   * Le stock est vérifié avant chaque ajout au panier.
+
+
+6. Avertissement en cas de dépassement du stock disponible 
+* En tant que : utilisateur
+* Je veux :  être averti si j'essaie d'ajouter une quantité non disponible en stock
+* Afin d' : éviter les erreurs
+Critères d'acceptation :
+1. Une erreur explicite est levée indiquant le stock actuel disponible pour le produit concerné.
+
+
+
+
+
+
+
+
+7. Prévention des Abus
+* En tant que : Administrateur
+* Je veux : je veux limiter les articles par panier pour éviter les abus ou les achats excessifs dans des promotions limitées
+* Afin de : ne pas commander un article que je ne souhaite plus acheter
+
+
+Critères d'acceptation :
+   3. La limite est configurable via une variable globale. La limite est appliquée à toutes les catégories.
+
+
+8. Appliquer une remise fixe
+* En tant que : utilisateur
+* Je veux : appliquer une réduction fixe sur le total de mon panier
+* Afin de : profiter de promotions et ajuster mes dépenses
+
+
+Critères d'acceptation :
+* L'utilisateur peut saisir un code promo dans un champ dédié.
+* Si la remise dépasse le total du panier, elle est limitée à ce total.
+* Les montants négatifs sont bloqués avec un message d'erreur : "Le montant de la réduction doit être positif."
+* Après application, le total est calculé et affiché avec un message de confirmation : "Votre remise de [montant] € a été appliquée avec succès. Le nouveau total est de [nouveau montant] €."
+* Une remise ne peut être appliquée à un panier vide, avec un message : "Impossible d'appliquer une remise sur un panier vide."
